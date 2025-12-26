@@ -1,0 +1,293 @@
+<!--
+ACADEMIC STANDARD HOMEPAGE (single-page)
+How to publish with GitHub Pages:
+1) Create a GitHub repo named: <your-username>.github.io
+2) Upload this file as: index.html
+3) Repo Settings → Pages → Deploy from branch: main / root
+4) Your site will be: https://<your-username>.github.io
+
+Optional:
+- Put your CV PDF at: /files/CV_Tomy_Fan.pdf and update the link.
+- Replace the placeholder links (Google Scholar, GitHub, etc.).
+- Add a headshot: /files/headshot.jpg and update the img src.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tomy Fan | Statistics PhD</title>
+  <meta name="description" content="Tomy Fan — Statistics PhD student. Research interests in statistical inference for networks, matrix completion, and related methods." />
+
+  <!-- Minimal academic styling (no frameworks) -->
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111827;
+      --muted:#4b5563;
+      --link:#1d4ed8;
+      --border:#e5e7eb;
+      --card:#f9fafb;
+      --max: 960px;
+      --radius: 14px;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+    }
+    a{color:var(--link); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:32px 20px 72px;}
+    header{
+      display:flex;
+      gap:22px;
+      align-items:flex-start;
+      justify-content:space-between;
+      padding:10px 0 24px;
+      border-bottom:1px solid var(--border);
+    }
+    .left{display:flex; gap:18px; align-items:flex-start;}
+    .avatar{
+      width:104px; height:104px;
+      border-radius:999px;
+      background:var(--card);
+      border:1px solid var(--border);
+      overflow:hidden;
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover; display:block;}
+    h1{margin:0; font-size:30px; letter-spacing:-0.02em;}
+    .subtitle{margin:6px 0 10px; color:var(--muted);}
+    .meta{display:flex; flex-wrap:wrap; gap:10px 14px; color:var(--muted); font-size:14px;}
+    .meta span{display:inline-flex; gap:6px; align-items:center;}
+    nav{
+      margin-top:8px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 14px;
+      justify-content:flex-end;
+      font-size:14px;
+    }
+    nav a{color:var(--muted);}
+    nav a:hover{color:var(--text);}
+    main{padding-top:22px;}
+    section{padding:18px 0; border-bottom:1px solid var(--border);}
+    section:last-child{border-bottom:none;}
+    h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-0.01em;
+    }
+    p{margin:0 0 10px;}
+    ul{margin:8px 0 0 18px; padding:0;}
+    li{margin:6px 0;}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:14px 14px;
+      margin-top:10px;
+    }
+    .two{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap:16px;
+    }
+    @media (max-width: 820px){
+      header{flex-direction:column; align-items:stretch;}
+      nav{justify-content:flex-start;}
+      .two{grid-template-columns: 1fr;}
+    }
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      background:#fff;
+    }
+    .small{font-size:14px; color:var(--muted);}
+    .pub{
+      padding:10px 0;
+      border-top:1px dashed var(--border);
+    }
+    .pub:first-child{border-top:none; padding-top:0;}
+    .pub-title{font-weight:600;}
+    .pub-venue{color:var(--muted); font-size:14px;}
+    footer{margin-top:26px; color:var(--muted); font-size:13px;}
+    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="left">
+        <div class="avatar" aria-label="Headshot">
+          <!-- Option A: uncomment and add your photo at /files/headshot.jpg -->
+          <!-- <img src="files/headshot.jpg" alt="Tomy Fan headshot" /> -->
+          <div>Headshot</div>
+        </div>
+        <div>
+          <h1>Tomy Fan</h1>
+          <div class="subtitle">Statistics PhD Student</div>
+          <div class="meta">
+            <span>📍 The Ohio State University</span>
+            <span>✉️ <a href="mailto:YOUR_EMAIL@osu.edu">YOUR_EMAIL@osu.edu</a></span>
+          </div>
+
+          <div class="pillrow" aria-label="Quick links">
+            <span class="pill"><a href="#research">Research</a></span>
+            <span class="pill"><a href="#publications">Publications</a></span>
+            <span class="pill"><a href="#teaching">Teaching</a></span>
+            <span class="pill"><a href="#talks">Talks</a></span>
+            <span class="pill"><a href="#service">Service</a></span>
+          </div>
+        </div>
+      </div>
+
+      <nav aria-label="External links">
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="files/CV_Tomy_Fan.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <div class="two">
+          <div>
+            <p>
+              I am a PhD student in Statistics at The Ohio State University. My interests include
+              statistical inference for networks and network-based data structures, matrix completion
+              under non-uniform missingness, and related methods in high-dimensional statistics.
+            </p>
+            <p class="small">
+              <strong>Advisor / collaborators:</strong> (add names)
+            </p>
+            <div class="card">
+              <div class="small"><strong>Research keywords</strong></div>
+              <div class="pillrow">
+                <span class="pill">Networks</span>
+                <span class="pill">Matrix completion</span>
+                <span class="pill">Missing data</span>
+                <span class="pill">Low-rank methods</span>
+                <span class="pill">Statistical learning</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <div class="small"><strong>Contact</strong></div>
+              <ul>
+                <li>Email: <a href="mailto:YOUR_EMAIL@osu.edu">YOUR_EMAIL@osu.edu</a></li>
+                <li>Office: (building / room)</li>
+                <li>Address: (department address)</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div class="small"><strong>News</strong></div>
+              <ul>
+                <li>(e.g., "Dec 2025: Visiting Taiwan; available for meetings via Zoom.")</li>
+                <li>(e.g., "Aug 2025: Presented at ...")</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="research">
+        <h2>Research</h2>
+        <p>
+          My current focus is on network data and low-rank structure with non-uniform observation patterns,
+          including propensity estimation and robust matrix completion.
+        </p>
+        <ul>
+          <li><strong>Network inference:</strong> latent position models, graph embeddings, and inference under sampling/measurement constraints.</li>
+          <li><strong>Matrix completion:</strong> nuclear norm / SVT-style estimators, inverse propensity weighting, and theory/algorithms under missing not at random.</li>
+          <li><strong>Applications:</strong> (add: biostatistics, actuarial / insurance analytics, etc.)</li>
+        </ul>
+
+        <div class="card">
+          <div class="small"><strong>Selected projects (edit)</strong></div>
+          <ul>
+            <li><strong>Project title</strong> — 1–2 sentence description, your role, and a link (paper/code).</li>
+            <li><strong>Project title</strong> — 1–2 sentence description, your role, and a link (paper/code).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>Publications & Preprints</h2>
+        <div class="card">
+          <div class="small">
+            If you don’t have publications yet, it’s standard to list <strong>Working papers / Preprints</strong>
+            and <strong>Manuscripts in preparation</strong>.
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-title">(Your paper title)</div>
+          <div class="pub-venue">Authors. Venue / status, year. <a href="#">[PDF]</a> <a href="#">[Code]</a></div>
+        </div>
+        <div class="pub">
+          <div class="pub-title">(Your paper title)</div>
+          <div class="pub-venue">Authors. Venue / status, year. <a href="#">[PDF]</a> <a href="#">[Code]</a></div>
+        </div>
+      </section>
+
+      <section id="teaching">
+        <h2>Teaching</h2>
+        <ul>
+          <li><strong>STAT XXXX</strong> — Teaching Assistant / Recitation Instructor, Term (e.g., Autumn 2025).</li>
+          <li><strong>STAT XXXX</strong> — Teaching Assistant, Term.</li>
+        </ul>
+      </section>
+
+      <section id="talks">
+        <h2>Talks</h2>
+        <ul>
+          <li><strong>Talk title</strong>, event / seminar, location, date.</li>
+          <li><strong>Poster title</strong>, conference, date.</li>
+        </ul>
+      </section>
+
+      <section id="service">
+        <h2>Service</h2>
+        <ul>
+          <li>Reading group organizer, (group name), (year–year).</li>
+          <li>Reviewer for (journal / conference), (year).</li>
+        </ul>
+      </section>
+
+      <section id="cv">
+        <h2>CV</h2>
+        <p>
+          <a href="files/CV_Tomy_Fan.pdf" target="_blank" rel="noopener noreferrer">Download my CV (PDF)</a>
+          <span class="small">(Place the PDF at <span class="kbd">/files/CV_Tomy_Fan.pdf</span>.)</span>
+        </p>
+      </section>
+
+      <footer>
+        <div>Last updated: <!-- manually edit --> Dec 26, 2025</div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
