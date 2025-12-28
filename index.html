@@ -42,7 +42,7 @@ Optional:
     }
     a{color:var(--link); text-decoration:none;}
     a:hover{text-decoration:underline;}
-    .wrap{max-width:var(--max); margin:0 auto; padding:32px 20px 72px;}
+    .wrap{max-width:1100px; margin:0 auto; padding:32px 20px 72px;}
     header{
       display:flex;
       gap:22px;
@@ -53,19 +53,17 @@ Optional:
     }
     .left{display:flex; gap:18px; align-items:flex-start;}
     .avatar{
-      width:104px; height:104px;
-      border-radius:999px;
-      background:var(--card);
-      border:1px solid var(--border);
-      overflow:hidden;
-      flex:0 0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .avatar img{width:100%; height:100%; object-fit:cover; display:block;}
+  width:140px;
+  height:140px;          /* square */
+  border-radius:6px;     /* slight rounding (OSU-style) */
+  background:#fff;
+  overflow:hidden;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+    .avatar img{width:100%; height:100%; object-fit:contain; object-position: center; display:block;}
     h1{margin:0; font-size:30px; letter-spacing:-0.02em;}
     .subtitle{margin:6px 0 10px; color:var(--muted);}
     .meta{display:flex; flex-wrap:wrap; gap:10px 14px; color:var(--muted); font-size:14px;}
@@ -83,12 +81,19 @@ Optional:
     main{padding-top:22px;}
     section{padding:18px 0; border-bottom:1px solid var(--border);}
     section:last-child{border-bottom:none;}
+    section#about p {
+      max-width: none;      /* full width */
+      margin-left: 0;
+      margin-right: 0;
+      line-height: 1.6;
+    }
+
     h2{
       margin:0 0 10px;
       font-size:18px;
       letter-spacing:-0.01em;
     }
-    p{margin:0 0 10px;}
+    p{ margin: 0 0 16px; }
     ul{margin:8px 0 0 18px; padding:0;}
     li{margin:6px 0;}
 
@@ -129,6 +134,14 @@ Optional:
     .pub-venue{color:var(--muted); font-size:14px;}
     footer{margin-top:26px; color:var(--muted); font-size:13px;}
     .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px;}
+    .topnav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0; border-bottom:1px solid #e5e7eb;
+  }
+  .topnav .brand{font-weight:700; color:#111827; text-decoration:none;}
+  .topnav .links{display:flex; gap:18px;}
+  .topnav .links a{color:#4b5563; text-decoration:none;}
+  .topnav .links a:hover{color:#111827; text-decoration:underline;}
   </style>
 </head>
 
@@ -138,15 +151,15 @@ Optional:
       <div class="left">
         <div class="avatar" aria-label="Headshot">
           <!-- Option A: uncomment and add your photo at /files/headshot.jpg -->
-          <!-- <img src="files/headshot.jpg" alt="Tomy Fan headshot" /> -->
-          <div>Headshot</div>
+          <img src="files/headshot.jpg" alt="Tomy Fan headshot"/>
         </div>
         <div>
           <h1>Tomy Fan</h1>
           <div class="subtitle">Statistics PhD Student</div>
           <div class="meta">
             <span>📍 The Ohio State University</span>
-            <span>✉️ <a href="mailto:YOUR_EMAIL@osu.edu">YOUR_EMAIL@osu.edu</a></span>
+            <span>✉️ <a href="mailto:fan.1317@buckeyemail.osu.edu">fan.1317@buckeyemail.osu.edu</a></span>
+            <span><a href="https://www.linkedin.com/in/tomyksfan/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
           </div>
           <!--
           <div class="pillrow" aria-label="Quick links">
@@ -159,25 +172,45 @@ Optional:
           -->
         </div>
       </div>
-
+      <nav class="topnav">
+        <a class="brand" href="index.html">Tomy Fan</a>
+        <div class="links">
+          <!--<a href="publications.html">Publications</a>-->
+          <a href="cv.html">CV</a>
+        </div>
+      </nav>
       <nav aria-label="External links">
         <!--<a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>-->
         <!--<a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>-->
-        <a href="https://www.linkedin.com/in/tomyksfan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="files/CV_Tomy_Fan.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+        <!--<a href="https://www.linkedin.com/in/tomyksfan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>-->
+        <!--<a href="files/CV_Tomy_Fan.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>-->
       </nav>
     </header>
 
     <main>
       <section id="about">
-        <h2>About</h2>
-        <div class="two">
+        <h2>About Me</h2>
+        <!--<div class="two">-->
           <div>
             <p>
-              I am a PhD student in Statistics at The Ohio State University. My interests include
-              statistical inference for networks and network-based data structures, matrix completion
-              under non-uniform missingness, and related methods in high-dimensional statistics.
+              I am currently a PhD student in the Department of Statistics at The Ohio State University. 
+              I earned my MS in Statistics from the University of Illinois at Urbana–Champaign in 2024
+              and my BS in Applied Mathematics from National Yang Ming Chiao Tung University in 2022.
             </p>
+          
+            <p>
+              Some of my previous research experience include evaluating the capabilities and limitations of large language models in
+              actuarial examinations, as well as applying machine learning methods to financial data for risk
+              detection and credit scoring.
+              I also conducted sentiment analysis on large-scale New York Times comment data related to COVID-19
+              and vaccines, applying text-based models to extract temporal and thematic patterns.
+            </p>
+          
+            <p>
+              My current research interests broadly include statistical learning, network and structured data,
+              high-dimensional inference, and applications in finance, and social data analysis.
+            </p>
+            <!--
             <p class="small">
               <strong>Advisor / collaborators:</strong> (add names)
             </p>
@@ -191,8 +224,9 @@ Optional:
                 <span class="pill">Statistical learning</span>
               </div>
             </div>
+          -->
           </div>
-
+          <!--
           <div>
             <div class="card">
               <div class="small"><strong>Contact</strong></div>
@@ -210,7 +244,8 @@ Optional:
               </ul>
             </div>
           </div>
-        </div>
+          -->
+        <!--</div>-->
       </section>
 
       <section id="research">
@@ -219,6 +254,7 @@ Optional:
           My current focus is on network data and low-rank structure with non-uniform observation patterns,
           including propensity estimation and robust matrix completion.
         </p>
+        <!--
         <ul>
           <li><strong>Network inference:</strong> latent position models, graph embeddings, and inference under sampling/measurement constraints.</li>
           <li><strong>Matrix completion:</strong> nuclear norm / SVT-style estimators, inverse propensity weighting, and theory/algorithms under missing not at random.</li>
@@ -232,8 +268,9 @@ Optional:
             <li><strong>Project title</strong> — 1–2 sentence description, your role, and a link (paper/code).</li>
           </ul>
         </div>
+        -->
       </section>
-
+      <!--
       <section id="publications">
         <h2>Publications & Preprints</h2>
         <div class="card">
@@ -284,7 +321,7 @@ Optional:
           <span class="small">(Place the PDF at <span class="kbd">/files/CV_Tomy_Fan.pdf</span>.)</span>
         </p>
       </section>
-
+      -->
       <footer>
         <div>Last updated: <!-- manually edit --> Dec 26, 2025</div>
       </footer>
