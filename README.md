@@ -5,8 +5,7 @@ Source for [tomy-ksfan.github.io](https://tomy-ksfan.github.io/), a responsive a
 ## Structure
 
 - `index.html` — page content and metadata
-- `styles.css` — responsive visual system
-- `script.js` — accessible mobile navigation and active-section state
+- `styles.css` — minimal responsive layout
 - `files/` — optimized portrait and social sharing image
 
 ## Local preview
@@ -17,4 +16,4 @@ Run a static web server from the repository root and open the provided local URL
 python3 -m http.server 4173
 ```
 
-The site is intentionally framework-free and deploys directly from the `main` branch.
+The site is intentionally framework- and JavaScript-free and deploys directly from the `main` branch.

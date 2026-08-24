@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#173f3a">
+  <meta name="theme-color" content="#ffffff">
 
   <title>Kai-Shiang (Tomy) Fan | Statistics Ph.D. Student</title>
   <meta name="description" content="Kai-Shiang (Tomy) Fan is an Ohio State Statistics Ph.D. student researching matrix completion, Bayesian state-space models, and applied machine learning.">
@@ -25,9 +25,6 @@
   <meta name="twitter:image" content="https://tomy-ksfan.github.io/files/og-card.jpg">
   <meta name="twitter:image:alt" content="Kai-Shiang (Tomy) Fan — statistics, machine learning, and Bayesian modeling">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
     {
@@ -65,363 +62,205 @@
       }
     }
   </script>
-  <script src="script.js" defer></script>
 </head>
 
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header" id="top">
-    <div class="container nav-shell">
-      <a class="brand" href="#top" aria-label="Tomy Fan, home">
-        <span class="brand-mark" aria-hidden="true">TF</span>
-        <span class="brand-name">Tomy Fan</span>
-      </a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="sr-only">Toggle navigation</span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+    <div class="container header-inner">
+      <a class="site-name" href="#top">Tomy Fan</a>
+      <nav aria-label="Primary navigation">
         <a href="#research">Research</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
-        <a href="#work">Selected work</a>
-        <a class="nav-cta" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main-content">
-    <section class="hero" id="about" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow"><span></span> Statistics Ph.D. Student · The Ohio State University</p>
-          <p class="hero-name">Kai-Shiang <span>(Tomy)</span> Fan</p>
-          <h1 id="hero-title">Reliable methods for <em>incomplete, noisy &amp; dynamic</em> data.</h1>
-          <p class="hero-intro">
-            I'm Kai-Shiang (Tomy) Fan, a statistics researcher working across statistical learning, Bayesian modeling, and machine learning. I build methods that make complex data more useful—and the conclusions drawn from them more trustworthy.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#research">Explore my research <span aria-hidden="true">↓</span></a>
-            <a class="button button-text" href="mailto:fan.1317@buckeyemail.osu.edu">Get in touch <span aria-hidden="true">↗</span></a>
-          </div>
+  <main class="container" id="main-content">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow">Statistics Ph.D. Student · The Ohio State University</p>
+        <h1 id="intro-title">Kai-Shiang (Tomy) Fan</h1>
+        <p class="lead">I develop statistical methods for complex, incomplete, and dynamic data.</p>
+        <p>
+          I am a Statistics Ph.D. student and graduate researcher at The Ohio State University. My current work focuses on matrix completion under non-uniform missingness and Bayesian state-space models for digital twin systems.
+        </p>
+        <ul class="intro-links" aria-label="Contact and profiles">
+          <li><a href="mailto:fan.1317@buckeyemail.osu.edu">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/tomyksfan/">LinkedIn</a></li>
+          <li><a href="https://github.com/tomy-ksfan">GitHub</a></li>
+        </ul>
+      </div>
 
-          <dl class="hero-facts" aria-label="At a glance">
-            <div>
-              <dt>Current role</dt>
-              <dd>Graduate Researcher</dd>
-            </div>
-            <div>
-              <dt>Core tools</dt>
-              <dd>Python · R · SQL</dd>
-            </div>
-            <div>
-              <dt>Based in</dt>
-              <dd>Columbus, Ohio</dd>
-            </div>
-          </dl>
-        </div>
+      <picture class="portrait">
+        <source srcset="files/headshot.webp" type="image/webp">
+        <img src="files/headshot.jpg" alt="Kai-Shiang (Tomy) Fan at the Grand Canyon" width="1170" height="1140" fetchpriority="high" decoding="async">
+      </picture>
+    </section>
 
-        <figure class="portrait-wrap">
-          <div class="portrait-accent" aria-hidden="true"></div>
-          <div class="portrait-frame">
-            <picture>
-              <source srcset="files/headshot.webp" type="image/webp">
-              <img src="files/headshot.jpg" alt="Kai-Shiang (Tomy) Fan at the Grand Canyon" width="1170" height="1140" fetchpriority="high" decoding="async">
-            </picture>
-          </div>
-          <figcaption>
-            <span>Researching at</span>
-            <strong>The Ohio State University</strong>
-          </figcaption>
-        </figure>
+    <section class="content-section" id="research" aria-labelledby="research-title">
+      <div class="section-label">
+        <h2 id="research-title">Research</h2>
+      </div>
+      <div class="section-body item-list">
+        <article>
+          <h3>Matrix completion and missing data</h3>
+          <p>Inverse-probability-weighted estimation for low-rank matrix completion when observations are sampled non-uniformly.</p>
+        </article>
+        <article>
+          <h3>Bayesian dynamic modeling</h3>
+          <p>State-space methods for digital twin systems, with an emphasis on real-time estimation, uncertainty quantification, and robustness.</p>
+        </article>
+        <article>
+          <h3>Machine learning evaluation</h3>
+          <p>Experimental evaluation of predictive performance and failure modes across financial, text, and large-language-model applications.</p>
+        </article>
       </div>
     </section>
 
-    <section class="statement section-pad" aria-labelledby="statement-title">
-      <div class="container statement-grid">
-        <p class="section-kicker">01 · About</p>
-        <div>
-          <h2 id="statement-title">Research grounded in theory, simulation, and real-world data.</h2>
-          <div class="statement-copy">
-            <p>
-              I am a Statistics Ph.D. student and graduate researcher at The Ohio State University. My work focuses on reliable estimation and uncertainty quantification when data are incomplete, dynamically evolving, or observed with bias.
-            </p>
-            <p>
-              Before Ohio State, I earned an M.S. in Statistics from the University of Illinois Urbana-Champaign and worked on financial-risk modeling, large-scale text analysis, and large language model evaluation.
-            </p>
-          </div>
-        </div>
+    <section class="content-section" id="experience" aria-labelledby="experience-title">
+      <div class="section-label">
+        <h2 id="experience-title">Experience</h2>
       </div>
-    </section>
-
-    <section class="research section-pad" id="research" aria-labelledby="research-title">
-      <div class="container">
-        <div class="section-heading">
+      <ol class="section-body entry-list">
+        <li>
+          <p class="entry-date"><time datetime="2024">2024</time>—Present</p>
           <div>
-            <p class="section-kicker">02 · Research</p>
-            <h2 id="research-title">Questions I work on</h2>
+            <h3>The Ohio State University</h3>
+            <p class="entry-role">Graduate Researcher · Department of Statistics</p>
+            <p>Research on matrix completion under non-uniform missingness and Bayesian state-space methods for digital twin systems.</p>
           </div>
-          <p>Statistical methodology paired with reproducible computational experiments.</p>
-        </div>
-
-        <div class="research-grid">
-          <article class="research-card research-card-featured">
-            <div class="card-topline">
-              <span>01</span>
-              <span class="card-status">Current focus</span>
-            </div>
-            <h3>Matrix Completion &amp; Missing Data</h3>
-            <p>
-              Developing inverse-probability-weighted estimators for low-rank matrix completion under non-uniform missingness, using propensity scores to address biased sampling.
-            </p>
-            <ul class="tag-list" aria-label="Matrix completion methods">
-              <li>Low-rank methods</li>
-              <li>IPW</li>
-              <li>Simulation</li>
-            </ul>
-          </article>
-
-          <article class="research-card">
-            <div class="card-topline">
-              <span>02</span>
-              <span class="card-status">Dynamic systems</span>
-            </div>
-            <h3>Bayesian State-Space Modeling</h3>
-            <p>
-              Building state-space methods for digital twin systems, with an emphasis on real-time estimation, uncertainty quantification, and decision-making under noisy observations.
-            </p>
-            <ul class="tag-list" aria-label="Bayesian modeling methods">
-              <li>Bayesian inference</li>
-              <li>Digital twins</li>
-              <li>Robustness</li>
-            </ul>
-          </article>
-
-          <article class="research-card">
-            <div class="card-topline">
-              <span>03</span>
-              <span class="card-status">Applied research</span>
-            </div>
-            <h3>Machine Learning Evaluation</h3>
-            <p>
-              Designing experiments to understand predictive performance, failure modes, and reliability across financial, text, and large-language-model applications.
-            </p>
-            <ul class="tag-list" aria-label="Machine learning evaluation methods">
-              <li>Model validation</li>
-              <li>LLM evaluation</li>
-              <li>Financial risk</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="experience section-pad" id="experience" aria-labelledby="experience-title">
-      <div class="container split-layout">
-        <div class="split-intro">
-          <p class="section-kicker">03 · Experience</p>
-          <h2 id="experience-title">From statistical research to applied risk modeling.</h2>
-          <p>Experience across academic research, machine learning experimentation, and financial data science.</p>
-        </div>
-
-        <ol class="timeline">
-          <li>
-            <div class="timeline-meta">
-              <p class="date-range"><time datetime="2024">2024</time><span>—Present</span></p>
-              <span class="timeline-location">Columbus, Ohio</span>
-            </div>
-            <div class="timeline-content">
-              <h3>The Ohio State University</h3>
-              <p class="role">Graduate Researcher · Department of Statistics</p>
-              <p>Researching matrix completion under non-uniform missingness and Bayesian state-space methods for digital twin systems.</p>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-meta">
-              <p class="date-range"><time datetime="2023-02">Feb 2023</time><span>—</span><time datetime="2023-05">May 2023</time></p>
-              <span class="timeline-location">Champaign, Illinois</span>
-            </div>
-            <div class="timeline-content">
-              <h3>University of Illinois Urbana-Champaign</h3>
-              <p class="role">Research Assistant · Dual research appointments</p>
-              <p>Conducted large-scale text and sentiment analysis and evaluated GPT-3.5 and GPT-4 on actuarial exam-style problems.</p>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-meta">
-              <p class="date-range"><time datetime="2020-07">Jul 2020</time><span>—</span><time datetime="2020-12">Dec 2020</time></p>
-              <span class="timeline-location">Taipei, Taiwan</span>
-            </div>
-            <div class="timeline-content">
-              <h3>Shin Kong Bank</h3>
-              <p class="role">Co-op Data Science Intern</p>
-              <p>Applied statistical modeling, anomaly detection, and business-rule validation to transaction-monitoring data.</p>
-            </div>
-          </li>
-          <li>
-            <div class="timeline-meta">
-              <p class="date-range"><time datetime="2019-06">Jun 2019</time><span>—</span><time datetime="2020-01">Jan 2020</time></p>
-              <span class="timeline-location">Taipei, Taiwan</span>
-            </div>
-            <div class="timeline-content">
-              <h3>E.SUN Bank</h3>
-              <p class="role">Co-op Data Science Intern</p>
-              <p>Built and validated Python machine-learning models for customer credit-risk prediction and communicated findings to senior stakeholders.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="education section-pad" id="education" aria-labelledby="education-title">
-      <div class="container">
-        <div class="section-heading section-heading-compact">
+        </li>
+        <li>
+          <p class="entry-date"><time datetime="2023-02">Feb 2023</time>—<time datetime="2023-05">May 2023</time></p>
           <div>
-            <p class="section-kicker">04 · Education</p>
-            <h2 id="education-title">Academic foundation</h2>
+            <h3>University of Illinois Urbana-Champaign</h3>
+            <p class="entry-role">Research Assistant</p>
+            <p>Large-scale text and sentiment analysis, alongside evaluations of GPT-3.5 and GPT-4 on actuarial exam-style problems.</p>
           </div>
-        </div>
+        </li>
+        <li>
+          <p class="entry-date"><time datetime="2020-07">Jul 2020</time>—<time datetime="2020-12">Dec 2020</time></p>
+          <div>
+            <h3>Shin Kong Bank</h3>
+            <p class="entry-role">Co-op Data Science Intern</p>
+            <p>Statistical modeling and anomaly detection for transaction-monitoring data.</p>
+          </div>
+        </li>
+        <li>
+          <p class="entry-date"><time datetime="2019-06">Jun 2019</time>—<time datetime="2020-01">Jan 2020</time></p>
+          <div>
+            <h3>E.SUN Bank</h3>
+            <p class="entry-role">Co-op Data Science Intern</p>
+            <p>Python machine-learning models for customer credit-risk prediction.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-        <div class="education-grid">
-          <article>
-            <span class="degree-year">2024—Present</span>
+    <section class="content-section" id="education" aria-labelledby="education-title">
+      <div class="section-label">
+        <h2 id="education-title">Education</h2>
+      </div>
+      <ol class="section-body entry-list education-list">
+        <li>
+          <p class="entry-date">2024—Present</p>
+          <div>
             <h3>The Ohio State University</h3>
             <p>Ph.D. Student in Statistics</p>
-            <span>Columbus, Ohio</span>
-          </article>
-          <article>
-            <span class="degree-year">May 2024</span>
+          </div>
+        </li>
+        <li>
+          <p class="entry-date">May 2024</p>
+          <div>
             <h3>University of Illinois Urbana-Champaign</h3>
             <p>M.S. in Statistics</p>
-            <span>Champaign, Illinois</span>
-          </article>
-          <article>
-            <span class="degree-year">January 2022</span>
+          </div>
+        </li>
+        <li>
+          <p class="entry-date">January 2022</p>
+          <div>
             <h3>National Yang Ming Chiao Tung University</h3>
             <p>B.S. in Applied Mathematics</p>
-            <span>Hsinchu, Taiwan</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills section-pad" aria-labelledby="skills-title">
-      <div class="container skills-shell">
-        <div class="skills-heading">
-          <p class="section-kicker">05 · Toolkit</p>
-          <h2 id="skills-title">Methods &amp; tools</h2>
-        </div>
-
-        <div class="skills-grid">
-          <article>
-            <span class="skill-number">A</span>
-            <h3>Programming</h3>
-            <p>Python · R · SQL · MATLAB</p>
-          </article>
-          <article>
-            <span class="skill-number">B</span>
-            <h3>Modeling</h3>
-            <p>Statistical learning · Bayesian inference · State-space models · Matrix completion · Anomaly detection</p>
-          </article>
-          <article>
-            <span class="skill-number">C</span>
-            <h3>Research practice</h3>
-            <p>Simulation · Experiment design · Model validation · Uncertainty quantification · Visualization</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="work section-pad" id="work" aria-labelledby="work-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">06 · Selected work</p>
-            <h2 id="work-title">A few public projects</h2>
           </div>
-          <p>Earlier research and coursework available on GitHub.</p>
-        </div>
-
-        <div class="work-list">
-          <a class="work-card" href="https://github.com/tomy-ksfan/tomy-ksfan/tree/main/Research" target="_blank" rel="noopener noreferrer">
-            <span class="sr-only">Opens in a new tab</span>
-            <span class="work-index">01</span>
-            <div>
-              <p class="work-type">Research archive</p>
-              <h3>Financial Risk &amp; AML Modeling</h3>
-              <p>Stochastic ordering, fraud detection, and machine-learning approaches to financial-risk analysis.</p>
-            </div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="work-card" href="https://github.com/tomy-ksfan/tomy-ksfan/tree/main/UIUC-Project/Statistical-Modeling-1-Case-Study" target="_blank" rel="noopener noreferrer">
-            <span class="sr-only">Opens in a new tab</span>
-            <span class="work-index">02</span>
-            <div>
-              <p class="work-type">Statistical modeling</p>
-              <h3>Applied Case Studies</h3>
-              <p>Reproducible analyses exploring model selection, diagnostics, interpretation, and communication.</p>
-            </div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <a class="work-card" href="https://github.com/tomy-ksfan/tomy-ksfan/tree/main/UIUC-Project/Shiny-App-Project" target="_blank" rel="noopener noreferrer">
-            <span class="sr-only">Opens in a new tab</span>
-            <span class="work-index">03</span>
-            <div>
-              <p class="work-type">R Shiny application</p>
-              <h3>COVID-19 Tracking Dashboard</h3>
-              <p>An interactive course project for exploring and presenting pandemic data in a clear visual interface.</p>
-            </div>
-            <span class="work-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
+        </li>
+      </ol>
     </section>
 
-    <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="contact-panel">
-          <p class="section-kicker section-kicker-light">07 · Contact</p>
-          <div class="contact-grid">
-            <div>
-              <h2 id="contact-title">Let's talk about research and collaboration.</h2>
-              <p>I'm always interested in thoughtful conversations around statistical learning, Bayesian modeling, missing-data methods, and applied machine learning.</p>
-            </div>
-            <div class="contact-links">
-              <a href="mailto:fan.1317@buckeyemail.osu.edu">
-                <span class="contact-label">Email</span>
-                <strong>fan.1317@buckeyemail.osu.edu</strong>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a href="https://www.linkedin.com/in/tomyksfan/" target="_blank" rel="noopener noreferrer">
-                <span class="sr-only">Opens in a new tab</span>
-                <span class="contact-label">LinkedIn</span>
-                <strong>Connect professionally</strong>
-                <span aria-hidden="true">↗</span>
-              </a>
-              <a href="https://github.com/tomy-ksfan" target="_blank" rel="noopener noreferrer">
-                <span class="sr-only">Opens in a new tab</span>
-                <span class="contact-label">GitHub</span>
-                <strong>Explore my code</strong>
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
+    <section class="content-section" aria-labelledby="skills-title">
+      <div class="section-label">
+        <h2 id="skills-title">Skills</h2>
+      </div>
+      <dl class="section-body skills-list">
+        <div>
+          <dt>Programming</dt>
+          <dd>Python, R, SQL, MATLAB</dd>
         </div>
+        <div>
+          <dt>Methods</dt>
+          <dd>Statistical learning, Bayesian inference, state-space models, matrix completion, anomaly detection</dd>
+        </div>
+        <div>
+          <dt>Research</dt>
+          <dd>Simulation, experimental design, model validation, uncertainty quantification, data visualization</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="content-section" id="work" aria-labelledby="work-title">
+      <div class="section-label">
+        <h2 id="work-title">Selected work</h2>
+      </div>
+      <ul class="section-body project-list">
+        <li>
+          <a href="https://github.com/tomy-ksfan/tomy-ksfan/tree/main/Research">
+            <span>
+              <strong>Financial Risk &amp; AML Modeling</strong>
+              <small>Stochastic ordering, fraud detection, and machine learning for financial-risk analysis.</small>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/tomy-ksfan/tomy-ksfan/tree/main/UIUC-Project/Statistical-Modeling-1-Case-Study">
+            <span>
+              <strong>Applied Statistical Case Studies</strong>
+              <small>Reproducible work in model selection, diagnostics, interpretation, and communication.</small>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/tomy-ksfan/tomy-ksfan/tree/main/UIUC-Project/Shiny-App-Project">
+            <span>
+              <strong>COVID-19 Tracking Dashboard</strong>
+              <small>An R Shiny course project for exploring and presenting pandemic data.</small>
+            </span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="content-section contact" id="contact" aria-labelledby="contact-title">
+      <div class="section-label">
+        <h2 id="contact-title">Contact</h2>
+      </div>
+      <div class="section-body">
+        <p>I welcome conversations about statistical learning, Bayesian modeling, missing-data methods, and applied machine learning.</p>
+        <p class="contact-line"><a href="mailto:fan.1317@buckeyemail.osu.edu">fan.1317@buckeyemail.osu.edu</a></p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="current-year">2026</span> Kai-Shiang (Tomy) Fan</p>
-      <p>Statistics · Research · Machine Learning</p>
-      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      <p>© 2026 Kai-Shiang (Tomy) Fan</p>
+      <a href="#top">Back to top</a>
     </div>
   </footer>
 </body>
