@@ -25,8 +25,8 @@ Use `notes/linear-regression/index.html` as a starting point. Each note has a st
 
 Equations use native MathML with the original LaTeX expressions kept in `annotation` elements. This keeps formulas selectable and avoids a client-side rendering dependency. LaTeX notes can serve as source material; edit them into a short introduction and worked example before publishing. The linear regression article adapts the basic-model and least-squares sections of STAT 7410 notes; the full course notes are not part of this repository.
 
-The regression figure uses the five illustrative observations in the article. Its fitted line is `score = 45.1 + 6.3 * hours`, with residual sum of squares `9.1`. The two SVG sizes keep axis labels readable on narrow screens.
+The regression figure uses the five illustrative observations in the article. Its fitted line is `score = 45.1 + 6.3 * hours`, with residual sum of squares `9.1`. Three SVG sizes keep axis labels readable across desktop, tablet, and mobile widths.
 
 ## Design notes
 
-The layout uses the original white, charcoal, and teal palette with text columns capped at 48ch. Copy and spacing refinements were guided by [unslop](https://github.com/heydamir/unslop), created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The layout uses the original white, charcoal, and teal palette. The desktop frame is capped at 1120px, homepage text at 76ch, and note articles at 760px to reduce side whitespace. Smaller screens use responsive gutters. Copy and spacing refinements were guided by [unslop](https://github.com/heydamir/unslop), created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
