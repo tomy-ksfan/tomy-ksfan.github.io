@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Linear regression | Tomy Fan</title>
+  <meta name="description" content="An introduction to linear regression: least squares, a five-point example, residuals, and the connection to matrix projections.">
+  <meta name="author" content="Kai-Shiang (Tomy) Fan">
+  <link rel="canonical" href="https://tomy-ksfan.github.io/notes/linear-regression/">
+  <link rel="icon" type="image/webp" href="../../files/headshot.webp">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://tomy-ksfan.github.io/notes/linear-regression/">
+  <meta property="og:site_name" content="Kai-Shiang (Tomy) Fan">
+  <meta property="og:title" content="Linear regression | Tomy Fan">
+  <meta property="og:description" content="Least squares, a small worked example, and the geometry behind fitting a line.">
+  <meta property="og:image" content="https://tomy-ksfan.github.io/files/og-card.jpg">
+  <meta property="og:image:alt" content="Kai-Shiang (Tomy) Fan — statistics, machine learning, and Bayesian modeling">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../../styles.css?v=20261110-notes">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Linear regression",
+      "description": "Least squares, a small worked example, and the geometry behind fitting a line.",
+      "author": {"@type": "Person", "name": "Kai-Shiang (Tomy) Fan", "url": "https://tomy-ksfan.github.io/"},
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "mainEntityOfPage": "https://tomy-ksfan.github.io/notes/linear-regression/",
+      "inLanguage": "en"
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="site-name" href="../../">Tomy Fan</a>
+      <nav aria-label="Primary navigation">
+        <a href="../../#research">Research</a>
+        <a href="../../#notes" aria-current="page">Notes</a>
+        <a href="../../#experience">Experience</a>
+        <a href="../../#education">Education</a>
+        <a href="../../#work">Work</a>
+        <a href="../../#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container note-page" id="main-content">
+    <article class="note-article" aria-labelledby="note-title">
+      <a class="note-back" href="../../#notes"><span aria-hidden="true">←</span> Back to Notes</a>
+      <header class="note-header">
+        <h1 id="note-title">Linear regression</h1>
+        <p class="note-meta">Statistics · <time datetime="2026-11-10">November 10, 2026</time></p>
+        <p class="note-deck">A line summarizes how an outcome changes with a predictor. Here is how least squares chooses that line, what its slope means, and what the line leaves unexplained.</p>
+      </header>
+
+      <div class="note-body">
+        <section aria-labelledby="model-title">
+          <h2 id="model-title">The model</h2>
+          <p>Suppose we record study time and a quiz score for each student. Simple linear regression models the score as an intercept, a contribution from study time, and an error:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <semantics><mrow><msub><mi>Y</mi><mi>i</mi></msub><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><msub><mi>ε</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Y_i = \beta_0 + \beta_1 x_i + \varepsilon_i</annotation></semantics>
+            </math>
+          </div>
+          <p>Here, <math><msub><mi>β</mi><mn>0</mn></msub></math> is the intercept and <math><msub><mi>β</mi><mn>1</mn></msub></math> is the slope. If the error has mean zero at each study time, the line describes the mean score. An individual score can still fall above or below it.</p>
+          <p>“Linear” refers to the unknown coefficients. A model can include squared predictors and still be a linear model, as long as the coefficients enter linearly.</p>
+        </section>
+
+        <section aria-labelledby="least-squares-title">
+          <h2 id="least-squares-title">Choosing a line with least squares</h2>
+          <p>For a candidate line, each residual is the observed score minus the fitted score: a vertical distance on the plot. Ordinary least squares (OLS) chooses the intercept and slope that minimize the sum of squared residuals:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mrow><mo>(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><msub><mi>b</mi><mn>0</mn></msub><mo>−</mo><msub><mi>b</mi><mn>1</mn></msub><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sum_{i=1}^{n}(y_i-b_0-b_1x_i)^2</annotation></semantics>
+            </math>
+          </div>
+          <p>Squaring prevents positive and negative residuals from canceling, and gives larger misses more weight. When the predictor values are not all identical, the best-fitting intercept and slope are unique.</p>
+        </section>
+
+        <section aria-labelledby="example-title">
+          <h2 id="example-title">A small example</h2>
+          <p>Consider these five invented observations. They are teaching data, not evidence about how studying affects performance.</p>
+          <table class="note-table">
+            <caption>Illustrative study times and quiz scores</caption>
+            <thead><tr><th scope="col">Study time (hours)</th><th scope="col">Score (points)</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>52</td></tr>
+              <tr><td>2</td><td>57</td></tr>
+              <tr><td>3</td><td>65</td></tr>
+              <tr><td>4</td><td>68</td></tr>
+              <tr><td>5</td><td>78</td></tr>
+            </tbody>
+          </table>
+          <p>The least-squares fit is:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+              <semantics><mrow><mover><mi>y</mi><mo>^</mo></mover><mo>=</mo><mn>45.1</mn><mo>+</mo><mn>6.3</mn><mi>x</mi></mrow><annotation encoding="application/x-tex">\hat y = 45.1 + 6.3x</annotation></semantics>
+            </math>
+          </div>
+          <figure class="note-figure">
+            <picture>
+              <source media="(max-width: 520px)" srcset="example-mobile.svg">
+              <img src="example.svg" width="432" height="298" alt="Five scores rise from 52 at one hour to 78 at five hours. The fitted line is score equals 45.1 plus 6.3 times hours. At four hours, the observed score of 68 is 2.3 points below the line." loading="lazy" decoding="async">
+            </picture>
+            <figcaption>The teal line is the least-squares fit. The dashed segment at four hours shows one residual: observed minus fitted.</figcaption>
+          </figure>
+          <p>The slope is 6.3 points per hour: along this fitted line, one more hour corresponds to a 6.3-point increase in predicted score. This is an association in these data, not a causal effect.</p>
+          <p>At four hours, the predicted score is 45.1 + 6.3 × 4 = 70.3. The observed score is 68, so the residual is 68 − 70.3 = −2.3 points. The five squared residuals sum to 9.1.</p>
+          <p>The intercept, 45.1, is the line’s prediction at zero hours. Since the observed times range from one to five hours, that interpretation already involves extrapolation.</p>
+          <details class="note-detail">
+            <summary>Reproduce the example in R</summary>
+            <pre><code>hours &lt;- c(1, 2, 3, 4, 5)
+score &lt;- c(52, 57, 65, 68, 78)
+fit &lt;- lm(score ~ hours)
+coef(fit)
+# (Intercept)       hours
+#        45.1         6.3
+sum(resid(fit)^2)
+# 9.1</code></pre>
+          </details>
+        </section>
+
+        <section aria-labelledby="checks-title">
+          <h2 id="checks-title">What to check before trusting the fit</h2>
+          <p>A fitted line alone does not tell us whether a linear mean is appropriate. Plot residuals against fitted values: curvature can suggest a missing nonlinear term, while a changing spread can suggest unequal error variances. Inspect unusual observations, too; squared loss can make them influential.</p>
+          <p>Computing OLS does not require normally distributed errors. The usual classical standard errors assume a correct linear mean and uncorrelated errors with a common variance. Normal errors give exact finite-sample t and F inference under those assumptions. Residual plots can reveal problems, but cannot establish that all assumptions hold.</p>
+          <p>For prediction, check performance on data not used to fit the model, and be cautious outside the observed predictor range.</p>
+        </section>
+
+        <details class="note-detail">
+          <summary>The matrix and projection view</summary>
+          <p>Stack the responses into a vector <math><mi>Y</mi></math>. For simple regression, the design matrix <math><mi>X</mi></math> has a column of ones and a column of predictor values. The model becomes:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>Y</mi><mo>=</mo><mi>X</mi><mi>β</mi><mo>+</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">Y=X\beta+\varepsilon</annotation></semantics></math>
+          </div>
+          <p>If <math><mi>X</mi></math> has full column rank, the unique least-squares estimate is:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mover><mi>β</mi><mo>^</mo></mover><mo>=</mo><msup><mrow><mo>(</mo><msup><mi>X</mi><mo>⊤</mo></msup><mi>X</mi><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>X</mi><mo>⊤</mo></msup><mi>Y</mi></mrow><annotation encoding="application/x-tex">\hat\beta=(X^\top X)^{-1}X^\top Y</annotation></semantics></math>
+          </div>
+          <p>The fitted vector <math><mover><mi>Y</mi><mo>^</mo></mover><mo>=</mo><mi>X</mi><mover><mi>β</mi><mo>^</mo></mover></math> is the orthogonal projection of <math><mi>Y</mi></math> onto the column space of <math><mi>X</mi></math>. Equivalently, the residual is perpendicular to every column of the design matrix:</p>
+          <div class="equation">
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>X</mi><mo>⊤</mo></msup><mo>(</mo><mi>Y</mi><mo>−</mo><mi>X</mi><mover><mi>β</mi><mo>^</mo></mover><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">X^\top(Y-X\hat\beta)=0</annotation></semantics></math>
+          </div>
+          <p>This is the geometric reason least squares works: among all vectors the model can produce, the projection is the closest to the observed responses.</p>
+        </details>
+      </div>
+
+      <footer class="note-sources">
+        <h2>Sources and further reading</h2>
+        <p>Adapted from my <em>STAT 7410 Preview Notes</em>, especially “Basic linear model examples” and “Geometry of least squares.” The numerical example was created for this note.</p>
+        <p>For another treatment, see the NIST/SEMATECH e-Handbook sections on <a href="https://www.itl.nist.gov/div898/handbook/pmd/section1/pmd141.htm">linear least squares regression</a> and <a href="https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd431.htm">least squares estimation</a>.</p>
+      </footer>
+      <p class="note-end"><a href="../../#notes"><span aria-hidden="true">←</span> All notes</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Kai-Shiang (Tomy) Fan</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
