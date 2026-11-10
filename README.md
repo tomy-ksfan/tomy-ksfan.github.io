@@ -29,4 +29,4 @@ The regression figure uses the five illustrative observations in the article. It
 
 ## Design notes
 
-The layout uses the original white, charcoal, and teal palette. The desktop frame is capped at 1120px, homepage text at 76ch, and note articles at 760px to reduce side whitespace. Smaller screens use responsive gutters. Copy and spacing refinements were guided by [unslop](https://github.com/heydamir/unslop), created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The layout uses the original white, charcoal, and teal palette. The desktop frame is capped at 1120px, homepage text at 670px, and note articles at 760px to reduce side whitespace. Body text is 16px on the homepage and 17px in notes, with 1.8 line spacing for paragraphs. Smaller screens use responsive gutters and retain the larger body text. Copy and spacing refinements were guided by [unslop](https://github.com/heydamir/unslop), created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
